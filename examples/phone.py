@@ -22,25 +22,16 @@ def extract_all_phones(input):
 
 # Another way of doing the same thing, using the fullmatch method
 def is_valid_phone(input):
-	phone_regex = re.compile(r'\d{3} \d{3}-\d{4}')
-	match = phone_regex.fullmatch(input)
+	phone_regex = r'\d{3} \d{3}-\d{4}'
+	match = re.fullmatch(phone_regex, input)
 	if match:
 		return True
 	return False
 
-# Calling our functions a bunch of times...
-
 print(extract_phone("my number is 432 567-8976"))
-print(extract_phone("my number is 432 567-897622"))
-print(extract_phone("432 567-8976 asdjhasd "))
-print(extract_phone("432 567-8976"))
-
 print(extract_all_phones("my number is 432 567-8976 or call me at 345 666-7899"))
-print(extract_all_phones("my number is 432 56"))
-
 print(is_valid_phone("432 567-8976"))
-print(is_valid_phone("432 567-8976 ads"))
-print(is_valid_phone("asd 432 567-8976 d"))
+
 
 
 
