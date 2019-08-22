@@ -268,11 +268,11 @@
 # print(add("1", "2")) # "Please only invoke with integers.
 
 
-def add_positive_numbers(x, y):
-    assert x > 0 and y > 0, "Both numbers must be positive"
-    return x + y
+# def add_positive_numbers(x, y):
+#     assert x > 0 and y > 0, "Both numbers must be positive"
+#     return x + y
 
-print(add_positive_numbers(1,5)) # 6
-print(add_positive_numbers(1,-5)) # AssertionError: Both numbers must be positive
+# print(add_positive_numbers(1,5)) # 6
+# print(add_positive_numbers(1,-5)) # AssertionError: Both numbers must be positive
 
 
