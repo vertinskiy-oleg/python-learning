@@ -32,19 +32,67 @@
 # print(two_list_dictionary(['x', 'y', 'z']  , [1,2])) # {'x': 1, 'y': 2, 'z': None}
 
 
-def range_in_list(l, *args):
-    if len(args) == 2:
-        start, end = args
-    elif len(args) == 1:
-        start, end = args[0], len(l) - 1
-    else:
-        start, end = 0, len(l) - 1
-    return sum(l[start:end + 1])
+# def range_in_list(l, *args):
+#     if args:
+#         if len(args) == 2:
+#             start, end = args[0], args[1] if args[1] < len(l) else len(l)
+#         else:
+#             start, end = args[0], len(l)
+#     else:
+#         start, end = 0, len(l)
+#     print(start, end)
+#     return sum(l[start:end + 1])
+
+# def range_in_list(l, start=0, end=None):
+#     end = end or len(l)
+#     return sum(l[start:end + 1])
 
 
-print(range_in_list([1,2,3,4],0,2)) #  6
-print(range_in_list([1,2,3,4],0,3)) # 10
-print(range_in_list([1,2,3,4],1)) #  9
-print(range_in_list([1,2,3,4])) # 10
-print(range_in_list([1,2,3,4],0,100)) # 10
-print(range_in_list([],0,1)) # 0
+# print(range_in_list([1,2,3,4],0,2)) #  6
+# print(range_in_list([1,2,3,4],0,3)) # 10
+# print(range_in_list([1,2,3,4],1)) #  9
+# print(range_in_list([1,2,3,4])) # 10
+# print(range_in_list([1,2,3,4],0,100)) # 10
+# print(range_in_list([],0,1)) # 0
+
+
+
+# def same_frequency(num_1, num_2):
+#     num_1_s, num_2_s = str(num_1), str(num_2)
+#     if len(num_1_s) == len(num_2_s):
+#         return all(num_1_s.count(n) == num_2_s.count(n) 
+#                     for n in num_1_s)
+#     return False
+
+
+# print(same_frequency(551122,221515)) # True
+# print(same_frequency(551122,231515)) # False
+# print(same_frequency(321142,3212215)) # False
+# print(same_frequency(1212, 2211)) # True
+# print(same_frequency(1212, 2251)) # False
+
+
+# def find_the_duplicate(l):
+#     for n in l:
+#         if l.count(n) == 2:
+#             return n
+#     return None
+
+
+# print(find_the_duplicate([1,2,1,4,3,12])) # 1
+# print(find_the_duplicate([6,1,9,5,3,4,9])) # 9
+# print(find_the_duplicate([2,1,3,4])) # None
+
+
+
+# def mode(l):
+#     freq = {n : l.count(n) for n in l}
+#     for k,v in freq.items():
+#         print(k,v)
+#         if v == max(freq.values()):
+#             return k
+    
+
+
+# print(mode([2,4,1,2,3,3,4,4,5,4,4,6,4,6,7,4])) # 4
+
