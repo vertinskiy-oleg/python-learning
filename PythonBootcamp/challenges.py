@@ -96,3 +96,45 @@
 
 # print(mode([2,4,1,2,3,3,4,4,5,4,4,6,4,6,7,4])) # 4
 
+
+
+
+def sum_up_diagonals(matrix):
+    total = 0
+    for i in range(len(matrix)):
+        total += matrix[i][i] + matrix[i][-i-1]
+    print(total)
+    return total
+
+
+list1 = [
+  [ 1, 2 ],
+  [ 3, 4 ]
+]
+ 
+sum_up_diagonals(list1) # 10
+
+list2 = [
+  [ 1, 2, 3 ],
+  [ 4, 5, 6 ],
+  [ 7, 8, 9 ]
+]
+ 
+sum_up_diagonals(list2) # 30
+ 
+list3 = [
+  [ 4, 1, 0 ],
+  [ -1, -1, 0],
+  [ 0, 0, 9]
+]
+
+sum_up_diagonals(list3) # 11
+
+list4 = [
+  [ 1, 2, 3, 4 ],
+  [ 5, 6, 7, 8 ],
+  [ 9, 10, 11, 12 ],
+  [ 13, 14, 15, 16 ]
+]
+ 
+sum_up_diagonals(list4) # 68
