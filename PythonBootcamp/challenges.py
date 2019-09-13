@@ -139,5 +139,31 @@
  
 # sum_up_diagonals(list4) # 68
 
-#
-#
+
+
+# def find_greater_numbers(l):
+#     count = 0
+#     for i in range(len(l)):
+#         for j in range(i+1, len(l)):
+#             # print(l[i], l[j], l[i] < l[j])
+#             if l[i] < l[j]:
+#                 count += 1
+#     print(count)
+#     return count
+
+
+# find_greater_numbers([1,2,3]) # 3 
+# find_greater_numbers([6,1,2,7]) # 4
+# find_greater_numbers([5,4,3,2,1]) # 0
+# find_greater_numbers([]) # 0
+
+
+def is_odd_string(s):
+    return sum(1 + ord(char) - ord('a') for char in s) % 2 != 0
+
+
+print(is_odd_string('a')) # True
+print(is_odd_string('aaaa')) # False
+print(is_odd_string('amazing')) # True
+print(is_odd_string('veryfun')) # True
+print(is_odd_string('veryfunny')) # False
