@@ -284,20 +284,49 @@
 
 
 
-def once(func):
-    count = 0
-    def inner(func):
-        nonlocal func, count
-        count += 1
-        return func
-    return inner
+# def once(func):
+#     count = 0
+#     def inner(*args):
+#         nonlocal count
+#         count += 1
+#         if count > 1:
+#             return None
+#         return func(*args)
+#     return inner
 
 
-def add(a,b):
-    return a+b
+# def add(a,b):
+#     return a+b
 
-oneAddition = once(add)
+# oneAddition = once(add)
 
-oneAddition(2,2) # 4
-oneAddition(2,2) # None
-oneAddition(12,200) # None
+# print(oneAddition(2,2)) # 4
+# print(oneAddition(2,2)) # None
+# print(oneAddition(12,200)) # None
+
+
+
+
+# def next_prime(num):
+#     for n in range(1, num+1):
+#         for i in range(1, n):
+#             if n % i == 0:
+#                 break
+#             print(n)
+
+# next_prime(10)
+
+
+
+# primes = next_prime()
+# print([next(primes) for i in range(100)])
+# # [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
+
+
+def is_prime(num):
+    for i in range(2, num):
+            if num % i == 0:
+                    break
+    else:
+            print(True)
+
