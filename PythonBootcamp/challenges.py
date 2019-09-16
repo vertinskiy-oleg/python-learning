@@ -182,18 +182,18 @@
 #         i += 1
 #     return count == 0
 
-def valid_parentheses(s):
-    count = 0
-    for i in range(len(s)):
-        import pdb; pdb.set_trace()
-        if s[i] == '(':
-           count += 1
-        elif s[i] == ')':
-            count -= 1
+# def valid_parentheses(s):
+#     count = 0
+#     for i in range(len(s)):
+#         import pdb; pdb.set_trace()
+#         if s[i] == '(':
+#            count += 1
+#         elif s[i] == ')':
+#             count -= 1
             
-        if count < 0:
-            return False
-    return count == 0
+#         if count < 0:
+#             return False
+#     return count == 0
 
 
 # print(valid_parentheses("()")) # True 
@@ -201,10 +201,103 @@ def valid_parentheses(s):
 # print(valid_parentheses(")(()))")) # False 
 # print(valid_parentheses("(")) # False 
 # print(valid_parentheses("(())((()())())")) # True 
-print(valid_parentheses('))((')) # False
+# print(valid_parentheses('))((')) # False
 # print(valid_parentheses('())(')) # False
 # print(valid_parentheses('()()()()())()(')) # False
 
-# )
-# (
-# ()
+
+# def reverse_vowels(s):
+#     l = list(s)
+#     vowels = [char for char in l if char in 'aeiouAEIOU']
+#     count = 0
+#     for i in range(len(l)):
+#         if l[i] in vowels:
+#             l[i] = vowels[-count-1]
+#             count += 1
+#    return "".join(l)
+
+
+# reverse_vowels("Hello!") # "Holle!" 
+# reverse_vowels("Tomatoes") # "Temotaos" 
+# reverse_vowels("Reverse Vowels In A String") # "RivArsI Vewols en e Streng"
+# reverse_vowels("aeiou") # "uoiea"
+# reverse_vowels("why try, shy fly?") # "why try, shy fly?"
+
+
+# def three_odd_numbers(l):
+#     for i in range(len(l)):
+#         l_3 = l[i:i+3]
+#         if len(l_3) == 3 and sum(l_3) % 2 != 0: 
+#             return True
+#     return False
+
+
+
+
+# three_odd_numbers([1,2,3,4,5]) # True
+# three_odd_numbers([0,-2,4,1,9,12,4,1,0]) # True
+# three_odd_numbers([5,2,1]) # False
+# three_odd_numbers([1,2,3,3,2]) # False
+
+
+
+
+
+# def running_average():
+#     call_count, num_count = [0, 0]
+#     def inner(num):
+#         nonlocal call_count, num_count
+#         call_count += 1
+#         num_count += num
+#         average = num_count/call_count
+#         return print(round(average, 2))
+#     return inner
+
+    
+# rAvg = running_average()
+# rAvg(10) # 10.0
+# rAvg(11) # 10.5
+# rAvg(12) # 11
+
+# rAvg2 = running_average()
+# rAvg2(1) # 1
+# rAvg2(3) # 2
+
+
+
+# def letter_counter(s):
+#     def inner(char):
+#         nonlocal s
+#         s = s.lower()
+#         return print(s.count(char))
+#     return inner
+
+
+
+# counter = letter_counter('Amazing')
+# counter('a') # 2
+# counter('m') # 1
+
+# counter2 = letter_counter('This Is Really Fun!')
+# counter2('i') # 2
+# counter2('t') # 1 
+
+
+
+def once(func):
+    count = 0
+    def inner(func):
+        nonlocal func, count
+        count += 1
+        return func
+    return inner
+
+
+def add(a,b):
+    return a+b
+
+oneAddition = once(add)
+
+oneAddition(2,2) # 4
+oneAddition(2,2) # None
+oneAddition(12,200) # None
