@@ -307,26 +307,20 @@
 
 
 
-# def next_prime(num):
-#     for n in range(1, num+1):
-#         for i in range(1, n):
-#             if n % i == 0:
-#                 break
-#             print(n)
-
-# next_prime(10)
-
-
-
-# primes = next_prime()
-# print([next(primes) for i in range(100)])
-# # [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
+def next_prime():
+    n = 2
+    while True:
+        for i in range(2, n):
+            if n % i == 0:
+                break
+        else:
+            yield n
+        n += 1
 
 
-def is_prime(num):
-    for i in range(2, num):
-            if num % i == 0:
-                    break
-    else:
-            print(True)
+
+primes = next_prime()
+print([next(primes) for i in range(25)])
+# [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
+
 
