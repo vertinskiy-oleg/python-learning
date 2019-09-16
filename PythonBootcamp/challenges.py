@@ -158,12 +158,53 @@
 # find_greater_numbers([]) # 0
 
 
-def is_odd_string(s):
-    return sum(1 + ord(char) - ord('a') for char in s) % 2 != 0
+# def is_odd_string(s):
+#     return sum(1 + ord(char) - ord('a') for char in s) % 2 != 0
 
 
-print(is_odd_string('a')) # True
-print(is_odd_string('aaaa')) # False
-print(is_odd_string('amazing')) # True
-print(is_odd_string('veryfun')) # True
-print(is_odd_string('veryfunny')) # False
+# print(is_odd_string('a')) # True
+# print(is_odd_string('aaaa')) # False
+# print(is_odd_string('amazing')) # True
+# print(is_odd_string('veryfun')) # True
+# print(is_odd_string('veryfunny')) # False
+
+
+# def valid_parentheses(parens):
+#     count = 0
+#     i = 0
+#     while i < len(parens):
+#         if (parens[i] == '('):
+#             count += 1
+#         if (parens[i] == ')'):
+#             count -= 1
+#         if (count < 0):
+#             return False
+#         i += 1
+#     return count == 0
+
+def valid_parentheses(s):
+    count = 0
+    for i in range(len(s)):
+        import pdb; pdb.set_trace()
+        if s[i] == '(':
+           count += 1
+        elif s[i] == ')':
+            count -= 1
+            
+        if count < 0:
+            return False
+    return count == 0
+
+
+# print(valid_parentheses("()")) # True 
+# print(valid_parentheses("()))")) # False 
+# print(valid_parentheses(")(()))")) # False 
+# print(valid_parentheses("(")) # False 
+# print(valid_parentheses("(())((()())())")) # True 
+print(valid_parentheses('))((')) # False
+# print(valid_parentheses('())(')) # False
+# print(valid_parentheses('()()()()())()(')) # False
+
+# )
+# (
+# ()
